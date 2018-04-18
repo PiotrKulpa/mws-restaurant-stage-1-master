@@ -1,7 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
-
-body,td,th,p{
+/* * {
+	box-sizing: border-box;
+} */
+body,td,th,p {
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 10pt;
 	color: #333;
@@ -47,6 +49,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
+	width: 100%;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -57,6 +60,7 @@ nav {
 }
 nav h1 {
   margin: auto;
+	padding-top: 10px;
 }
 nav h1 a {
   color: #fff;
@@ -106,6 +110,7 @@ nav h1 a {
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
   width: 100%;
+	display: flex;
   height: 50px;
   background-color: #3397DB;
   align-items: center;
@@ -130,14 +135,22 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Listing ====================== */
+.restaurants-list-wrapper {
+	margin: auto;
+	padding: 0;
+	width: 1500px;
+}
 #restaurants-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
   background-color: #f3f3f3;
   list-style: outside none none;
-  margin: 0;
+  margin: auto;
   padding: 30px 15px 60px;
-  text-align: center;
 }
 #restaurants-list li {
+	text-align:center;
   background-color: #fff;
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
