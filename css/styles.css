@@ -283,7 +283,7 @@ nav h1 a {
 }
 
 /* ====================== Smartphones ====================== */
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 650px) {
 	#breadcrumb {
 		width: 100%;
 	}
@@ -311,6 +311,10 @@ nav h1 a {
 		margin: 5px;
 		padding: 10px;
 		z-index: 0;
+	}
+	#reviews-list li {
+		width: 270px;
+		margin: 20px auto;
 	}
 	.inside #footer, #footer {
 		padding: 5px;
