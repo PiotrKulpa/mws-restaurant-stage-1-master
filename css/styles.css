@@ -49,7 +49,6 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
   padding: 25px;
   text-align: center;
   text-transform: uppercase;
-	width: 100%;
 }
 /* ====================== Navigation ====================== */
 nav {
@@ -135,15 +134,11 @@ nav h1 a {
 }
 
 /* ====================== Restaurant Listing ====================== */
-.restaurants-list-wrapper {
-	margin: auto;
-	padding: 0;
-	width: 1500px;
-}
 #restaurants-list {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: flex-start;
+	justify-content:space-around;
+	flex: 0 0 0;
   background-color: #f3f3f3;
   list-style: outside none none;
   margin: auto;
@@ -285,4 +280,24 @@ nav h1 a {
 }
 #restaurant-hours td {
   color: #666;
+}
+
+/* ====================== Smartphones ====================== */
+@media screen and (max-width: 450px) {
+	#breadcrumb {
+		width: 100%;
+	}
+	#neighborhoods-select, #cuisines-select {
+		width: 100px;
+	}
+	#restaurants-list li {
+		width: 100%;
+		margin: 5px;
+		padding: 10px;
+	}
+	.inside #footer, #footer {
+		width: 100%;
+		padding: 5px;
+		letter-spacing: 0;
+	}
 }
