@@ -281,6 +281,24 @@ nav h1 a {
 #restaurant-hours td {
   color: #666;
 }
+#neighborhoods-select:focus, #cuisines-select:focus {
+	outline: 0;
+	box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.8)
+}
+#restaurants-list .restaurant-img:focus,
+#restaurants-list li h1:focus,
+#restaurants-list li a:focus,
+#restaurant-name:focus,
+#restaurant-img:focus,
+#restaurant-cuisine:focus,
+#restaurant-address:focus,
+#restaurant-hours td:focus,
+#reviews-container h2:focus,
+#reviews-list li p:focus
+  {
+	outline: 0;
+	box-shadow: 0 0 8px 3px rgba(255, 165, 0, 1)
+}
 
 /* ====================== Smartphones ====================== */
 @media screen and (max-width: 650px) {
