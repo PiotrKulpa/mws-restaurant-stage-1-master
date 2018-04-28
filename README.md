@@ -4,7 +4,8 @@ Restaurant Reviews: Stage 1
 
 ## Getting Started
 
-This is Restaurant Reviews: Stage 1 application. It test behavior of app.Just clone or copy this project and run in browser. To run in browser You need liveserver on port 3000.
+This is Restaurant Reviews: Stage 1 application. It test behavior of app. Just clone or copy this project and run in browser. To run in browser You need liveserver on port 3000.
+Service workers main code location in root folder in sw.js. Service workers registration in js/dbhelper.js.
 
 ### Prerequisites
 
