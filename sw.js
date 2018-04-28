@@ -1,6 +1,11 @@
+/**
+ * Install static elements in service workers.
+ */
+var staticCacheName = 'restaurant-static-1';
+
 self.addEventListener('install', function(event) {
   event.waitUntil(
-    caches.open('restaurant-static').then(function(cache) {
+    caches.open(staticCacheName).then(function(cache) {
       return cache.addAll([
         '/css/styles.css',
         'index.html',
@@ -24,23 +29,31 @@ self.addEventListener('install', function(event) {
   )
 });
 
-self.addEventListener('fetch', function (event) {
-  event.respondWith(
-    caches.match(event.request).then(function(response) {
-      if (response) return response;
-      return fetch(event.request);
+/**
+ * Activate service workers.
+ */
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(
+        cacheNames.filter(function(cacheName) {
+          return cacheName.startsWith('restaurant-') &&
+                 cacheName != staticCacheName;
+        }).map(function(cacheName) {
+          return caches.delete(cacheName);
+        })
+      );
     })
-  )
+  );
 });
 
-// self.addEventListener('activate', function (event) {
-//     event.waitUntil(
-//         caches.keys().then(function(keys){
-//             return Promise.all(keys.map(function(key, i){
-//                 if(key !== 'restaurant-static'){
-//                     return caches.delete(keys[i]);
-//                 }
-//             }));
-//         })
-//     );
-// });
+/**
+ * Fetch data online or from service workers.
+ */
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
+});
