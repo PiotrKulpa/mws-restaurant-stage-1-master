@@ -64,7 +64,7 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = restaurant.name.toLowerCase();
+  image.alt = `Image of ${restaurant.name}`;
   image.tabIndex = 0;
 
   // Create restaurant cuisine.
