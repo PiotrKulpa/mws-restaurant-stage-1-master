@@ -46,24 +46,28 @@ fetchRestaurantFromURL = (callback) => {
 }
 
 /**
- * Create restaurant HTML and add it to the webpage
+ * Create restaurant HTML and add it to the webpage.
  */
 fillRestaurantHTML = (restaurant = self.restaurant) => {
+
+  // Create restaurant name.
   const name = document.getElementById('restaurant-name');
   name.innerHTML = restaurant.name;
   name.tabIndex = 0;
 
-
+  // Create restaurant address.
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
   address.tabIndex = 0;
 
+  // Create restaurant image.
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img'
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
   image.alt = restaurant.name.toLowerCase();
   image.tabIndex = 0;
 
+  // Create restaurant cuisine.
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
   cuisine.tabIndex = 0;
@@ -103,7 +107,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  const title = document.createElement('h2');
+  const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   title.tabIndex = 0;
   container.appendChild(title);
